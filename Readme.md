@@ -1,6 +1,6 @@
 <center><h2><b>Skillfactory: Module 6 - Ansible!!!! </center></h2></b><br><br>
 
-<h3><b>Задание B6.6.1</h3><b> <br>
+<h3><b>Задание B6.6.1</h3></b> <br>
 <br>
 Создайте Ansible-роль, устанавливающую и запускающую FTP-сервер vsftpd. <br>
 <br>
