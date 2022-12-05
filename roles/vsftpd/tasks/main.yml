@@ -1,0 +1,26 @@
+---
+# tasks file for vsftpd
+- name: Update the apt package index in Ubuntu server
+  become: yes
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+
+- name: Install vsftpd on Ubuntu server
+  become: yes
+  package:
+    name: vsftpd
+    state: present
+
+- name: add config file for ftp server vsftpd
+  become: yes
+  template: 
+    src: /etc/ansible/roles/vsftpd/templates/vsftpd.j2
+    dest: /etc/vsftpd.conf
+
+- name: vsftpd restart
+  become: yes
+  ansible.builtin.systemd:
+    name: vsftpd
+    state: restarted
+
